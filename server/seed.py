@@ -6,6 +6,86 @@ with app.app_context():
     from server.models.assets import Asset
     from server.models.databaseconfig import db
     
+    
+    assets= [
+            {
+            "name": "macbook",
+            "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFjYm9va3xlbnwwfHwwfHx8MA%3D%3D",
+            "condition": "Good",
+            "number": "12",
+            "dispursed": "all"
+            },
+            {
+            "name": "samsung printer",
+            "image": "https://plus.unsplash.com/premium_photo-1682145762522-cf0ea19fcd89?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2Ftc3VuZyUyMHByaW50ZXJ8ZW58MHx8MHx8fDA%3D",
+            "condition": "medium",
+            "number": "2",
+            "dispursed": "1"
+            },
+            {
+            "name": "office desks(mahogany)",
+            "image": "https://images.unsplash.com/photo-1594235048794-fae8583a5af5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTF8fG9mZmljZSUyMGRlc2t8ZW58MHx8MHx8fDA%3D",
+            "condition": "Good",
+            "number": "10",
+            "dispursed": "all"
+            },
+            {
+            "name": "calculator",
+            "image": "https://images.unsplash.com/photo-1598690042638-1b9844b7ef83?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fGNhbGN1bGF0b3J8ZW58MHx8MHx8fDA%3D",
+            "condition": "Good",
+            "number": "12",
+            "dispursed": "all"
+            },
+            {
+            "name": "security clothes",
+            "image": "https://plus.unsplash.com/premium_photo-1682125948844-e2dc8996b0f0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2VjdXJpdHklMjBjbG90aGVzfGVufDB8fDB8fHww",
+            "condition": "medium",
+            "number": "2",
+            "dispursed": "all"
+            },
+            {
+            "name": "macbook m3",
+            "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFjYm9va3xlbnwwfHwwfHx8MA%3D%3D",
+            "condition": "Good",
+            "number": "12",
+            "dispursed": "all"
+            },
+            {
+            "name": "toyota",
+            "image": "https://images.unsplash.com/photo-1569769928296-0b32cc843f58?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fHRveW90YXxlbnwwfHwwfHx8MA%3D%3D",
+            "condition": "medium",
+            "number": "3",
+            "dispursed": "all"
+            },
+            {
+            "name": "badge",
+            "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFjYm9va3xlbnwwfHwwfHx8MA%3D%3D",
+            "condition": "Good",
+            "number": "50",
+            "dispursed": "7"
+            },
+            {
+            "name": "macbook",
+            "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFjYm9va3xlbnwwfHwwfHx8MA%3D%3D",
+            "condition": "Good",
+            "number": "12",
+            "dispursed": "all"
+            }
+        ]
+        
+    for asset in assets:
+        new_asset = Asset(
+            name=asset["name"],
+            image=asset["image"],
+            condition=asset["condition"],
+            number=asset["number"],
+            dispursed=asset["dispursed"]
+        )
+        db.session.add(new_asset)
+        db.session.commit()
+        
+    
+    
     users = [
         {
         "username": "Dan",
@@ -85,97 +165,20 @@ with app.app_context():
         db.session.commit()
         
         
-        assets= [
-            {
-            "name": "macbook",
-            "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFjYm9va3xlbnwwfHwwfHx8MA%3D%3D",
-            "condition": "Good",
-            "number": "12",
-            "dispursed": "all"
-            },
-            {
-            "name": "samsung printer",
-            "image": "https://plus.unsplash.com/premium_photo-1682145762522-cf0ea19fcd89?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2Ftc3VuZyUyMHByaW50ZXJ8ZW58MHx8MHx8fDA%3D",
-            "condition": "medium",
-            "number": "2",
-            "dispursed": "1"
-            },
-            {
-            "name": "office desks(mahogany)",
-            "image": "https://images.unsplash.com/photo-1594235048794-fae8583a5af5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTF8fG9mZmljZSUyMGRlc2t8ZW58MHx8MHx8fDA%3D",
-            "condition": "Good",
-            "number": "10",
-            "dispursed": "all"
-            },
-            {
-            "name": "calculator",
-            "image": "https://images.unsplash.com/photo-1598690042638-1b9844b7ef83?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fGNhbGN1bGF0b3J8ZW58MHx8MHx8fDA%3D",
-            "condition": "Good",
-            "number": "12",
-            "dispursed": "all"
-            },
-            {
-            "name": "security clothes",
-            "image": "https://plus.unsplash.com/premium_photo-1682125948844-e2dc8996b0f0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2VjdXJpdHklMjBjbG90aGVzfGVufDB8fDB8fHww",
-            "condition": "medium",
-            "number": "2",
-            "dispursed": "all"
-            },
-            {
-            "name": "macbook m3",
-            "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFjYm9va3xlbnwwfHwwfHx8MA%3D%3D",
-            "condition": "Good",
-            "number": "12",
-            "dispursed": "all"
-            },
-            {
-            "name": "toyota",
-            "image": "https://images.unsplash.com/photo-1569769928296-0b32cc843f58?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fHRveW90YXxlbnwwfHwwfHx8MA%3D%3D",
-            "condition": "medium",
-            "number": "3",
-            "dispursed": "all"
-            },
-            {
-            "name": "badge",
-            "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFjYm9va3xlbnwwfHwwfHx8MA%3D%3D",
-            "condition": "Good",
-            "number": "50",
-            "dispursed": "7"
-            },
-            {
-            "name": "macbook",
-            "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFjYm9va3xlbnwwfHwwfHx8MA%3D%3D",
-            "condition": "Good",
-            "number": "12",
-            "dispursed": "all"
-            }
-        ]
-        
-        for asset in assets:
-            new_asset = Asset(
-                name=asset["name"],
-                image=asset["image"],
-                condition=asset["condition"],
-                number=asset["number"],
-                dispursed=asset["dispursed"]
-            )
-            db.session.add(new_asset)
-            db.session.commit()
-            
+
             
     
     approved= [
     {
-      "id": "74f2",
-      "userId": "6464",
-      "messageId": "6464",
+      "userId": "2",
+      "messageId": "2",
       "message": "your request has been placed on PENDING,please wait as for any incoming messages via email"
     }
   ]
     
     for approv in approved:
         new_approved = Approved(
-            id=approv["id"],
+            id="2",
             user_id=approv["userId"],
             message_id=approv["messageId"],
             message=approv["message"]

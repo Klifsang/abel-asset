@@ -9,11 +9,11 @@ from server.models.databaseconfig import db
 from flask_bcrypt import Bcrypt
 import os
 
-from endpoints.auth_api import login, get_current_user, logout
-from endpoints.users_api import create_user, delete_user,update_user, get_users, get_user_by_id
-from endpoints.assets_api import add_assets, delete_assets, patch_assets, get_assets
-from endpoints.approved_api import add_approved, get_approved, delete_approved
-from endpoints.requests_api import create_request, patch_requests
+from server.endpoints.auth_api import login, get_current_user, logout
+from server.endpoints.users_api import create_user, delete_user,update_user, get_users, get_user_by_id
+from server.endpoints.assets_api import add_assets, delete_assets, patch_assets, get_assets
+from server.endpoints.approved_api import add_approved, get_approved, delete_approved
+from server.endpoints.requests_api import create_request, patch_requests
 
 app = Flask(
     __name__,
